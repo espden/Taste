@@ -27,6 +27,7 @@ namespace Taste.DataAccess.Data.Repository
             return dbSet.Find(id);
         }
 
+        //When using the includedProperties argument make sure there are no spaces in your string
         public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includedProperties = null)
         {
             IQueryable<T> query = dbSet;
